@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas vs. SVG vs. CSS3</title>
+
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="user-scalable=no, width=768, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/application.css" />
+<script type="text/javascript" src="javascripts/sizzle.js"></script>
+<script type="text/javascript" src="javascripts/juni.js"></script>
+<script type="text/javascript" src="javascripts/application.js"></script>
+<link rel="shortcut icon" type="image/png" href="favicon.png" />
+<style>
+code {
+  position: absolute;
+  display: none;
+  bottom: 25px;
+  left: 25px;
+  font-size: 25px;
+}
+
+a {
+  display: block;
+  -webkit-transition: -webkit-transform 1.5s ease 0s;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+a:hover {
+  -webkit-transform: translate3d(350px,0,0) scale3d(1.5,1.5,1.5);
+}
+
+li:hover code {
+  display: block;
+}
+
+a.ease          { -webkit-transition: -webkit-transform 1s ease 0s; }
+a.linear        { -webkit-transition: -webkit-transform 1s linear 0s; }
+a.ease-in       { -webkit-transition: -webkit-transform 1s ease-in 0s; }
+a.ease-out      { -webkit-transition: -webkit-transform 1s ease-out 0s; }
+a.ease-in-out   { -webkit-transition: -webkit-transform 1s ease-in-out 0s; }
+a.cubic-bezier  { -webkit-transition: -webkit-transform 1s cubic-bezier(0.25,0.5,0.8,0.2) 0s; }
+
+</style>
+</head>
+<body>
+  <section id="content">
+    <h1>easing ain't easy - or is it?</h1>
+    <ul>
+      <li>
+        <a class="linear" href="#">linear</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s ease 0s;
+        </code>
+      </li>
+      <li>
+        <a class="ease" href="#">ease</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s linear 0s;
+        </code>
+      </li>
+      <li>
+        <a class="ease-in" href="#">ease-in</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s ease-in 0s;
+        </code>
+      </li>
+      <li>
+        <a class="ease-out" href="#">ease-out</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s ease-out 0s;
+        </code>      
+      </li>
+      <li>
+        <a class="ease-in-out" href="#">ease-in-out</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s ease-in-out 0s;
+        </code>      
+      </li>
+      <li>
+        <a class="cubic-bezier" href="#">cubic-bezier(x1, y1, x2, y2)</a>
+        <code>
+          -webkit-transition: -webkit-transform 1s cubic-bezier(0.25,0.5,0.8,0.2) 0s;
+        </code>      
+      </li>
+    </ul>
+    
+  </section>
+</body>
+</html>

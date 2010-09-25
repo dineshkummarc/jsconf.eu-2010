@@ -1,0 +1,39 @@
+html {
+  background: black; }
+
+* {
+  -webkit-user-select: none; }
+
+body {
+  color: white; }
+  body section#content {
+    color: white;
+    font-family: Georgia, Times, serif;
+    padding: 25px;
+    font-size: 60px; }
+    body section#content h1 {
+      margin-bottom: 30px; }
+    body section#content a {
+      color: red; }
+      body section#content a:hover {
+        background: red;
+        color: white; }
+
+img {
+  position: absolute; }
+
+img#test-1 {
+  top: 150px;
+  left: 500px; }
+
+img#test-2 {
+  top: 300px;
+  left: 500px; }
+
+img#test-3 {
+  top: 450px;
+  left: 500px; }
+
+canvas {
+  margin: 0;
+  padding: 0; }

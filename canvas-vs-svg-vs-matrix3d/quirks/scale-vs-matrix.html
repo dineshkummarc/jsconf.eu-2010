@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Juni</title>
+
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="user-scalable=no, width=768, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<style>
+html {
+  background: black;
+}
+
+body {
+  color: white;
+  padding: 25px;
+}
+
+img {
+  position: absolute;
+  -webkit-transition: all 1s ease-out 0s;
+}
+
+img#test-1 {
+  top: 150px;
+  left: 500px;
+}
+
+img#test-2 {
+  top: 300px;
+  left: 500px;
+}
+
+img#test-3 {
+  top: 450px;
+  left: 500px;
+}
+
+img#test-4 {
+  top: 500px;
+  left: 500px;
+}
+</style>
+
+<script>
+  function initialize() {
+    var e1 = document.getElementById("test-1");
+    var e2 = document.getElementById("test-2");
+    var e3 = document.getElementById("test-3");
+    var e4 = document.getElementById("test-3");
+    
+    window.setTimeout(function() {
+      e1.style.webkitTransform       = "scale3d(0,0,0)";
+      e2.style.webkitTransform       = "matrix3d(0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,1)";
+      e3.style.webkitTransform       = "matrix3d(0.00001,0,0,0, 0,0.00001,0,0, 0,0,0.00001,0, 0,0,0,1)";
+      e4.style.webkitTransform       = "matrix3d(1e-5,0,0,0, 0,1e-5,0,0, 0,0,1e-5,0, 0,0,0,1)";
+    }, 1000);
+    
+    window.setTimeout(function() {
+      var output = document.getElementById("computed-style");
+      output.innerHTML = "Computed style of ghost #1: " + window.getComputedStyle(e1).webkitTransform;
+    }, 5000);
+  }
+  
+  window.addEventListener('DOMContentLoaded', initialize, false)
+</script>
+</head>
+<body>
+  <h1>Welcome to ... the matrix3d scaryzone...</h1>
+  <p>
+    While scale3d(0,0,0) internally computes to matrix3d(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1)
+  </p>
+  <p>
+    Setting matrix3d(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1) yields on chrome to a non-centric zoom and does not scale in safari at all.
+  </p>
+  <p>
+    Scientific number are not allowed in CSS - but they should be.
+  </p>
+  <p id="computed-style">
+  </p>
+  <img id="test-1" src="../images/ghost.jpg" />
+  <img id="test-2" src="../images/ghost.jpg" />
+  <img id="test-3" src="../images/ghost.jpg" />
+  <img id="test-4" src="../images/ghost.jpg" />
+</body>
+</html>
