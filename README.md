@@ -6,6 +6,10 @@ Demos in the repo:
 * [Canvas vs. SVG vs. Matrix3d](http://9elements.com/html5demos/ifitmovestheywillwatchit/jsconf-demos/canvas-vs-svg-vs-matrix3d)
 * [CSS3 Transitions Timing Functions](http://9elements.com/html5demos/ifitmovestheywillwatchit/jsconf-demos/css-transitions/)
 
+And by popular demand:
+
+* [HTML5 Game](http://9elements.com/html5demos/html5game/) (FireFox only / unfinished)
+
 Install
 =======
 
